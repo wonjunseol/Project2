@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .entireWrapper {
+            display: flex;
+            flex-direction: column;
+            font: 100% Lucida Sans, Verdana;
+            padding: 15px;
+        }
+
+        #title {
+            background-color: #055b35;
+            color: #c2ec62;
+            border-radius: 4px;
+        }
+
+        #titleText1 {
+            padding-left: 20px;
+            margin: 15px 0px -15px 0px;
+        }
+
+        #titleText2 {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .bodyWrapper {
+            display: flex;
+            flex-direction: row;
+            margin: 10px 0px 10px 0px;
+        }
+
+        #menuBar {
+            width: 200px;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            margin: 0px 20px 0px -38px;
+        }
+
+        .menuItem {
+            width: 200px;
+            height: 50px;
+            background-color: #055b35;
+            color: #c2ec62;
+            list-style-type: none;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-bottom: 6px;
+        }
+
+        #menuItem1 {
+            width: 200px;
+            height: 50px;
+            background-color: #055b35;
+            color: #c2ec62;
+            list-style-type: none;
+            padding: 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-bottom: 6px;
+            padding: 5px;
+        }
+
+        #main {
+            margin-right: 20px;
+        }
+
+        #sideBar {
+            background-color: #348be2;
+            color: #c2ec62;
+            width: 400px;
+            height: 320px;
+            border-radius: 4px;
+        }
+
+        .sideBarText {
+            padding: 5px 10px 0px 10px;
+            line-height: 25px;
+        }
+
+        .footer {
+            border: 1px solid #d4d4d4;
+            background-color: #055b35;
+            color: #c2ec62;
+            text-align: center;
+            font-size: 70%;
+            line-height: 14px;
+            border-radius: 4px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="entireWrapper">
+        <div id="title">
+            <h1 id="titleText1">Welcome to 설원준's Homepage(22200377)</h1>
+            <p id="titleText2">Use the menu to select different Stylesheets </p>
+        </div>
+
+        <div class="bodyWrapper">
+            <div>
+                <ul id="menuBar">
+                    <li id="menuItem1">Stylesheet1</li>
+                    <li class="menuItem" onclick="">Stylesheet2</li>
+                    <li class="menuItem">Stylesheet3</li>
+                    <li class="menuItem">Stylesheet4</li>
+                    <li class="menuItem">No Stylesheet</li>
+                </ul>
+            </div>
+
+            <div id="main">
+                <h1>Same Page Different Stylesheets</h1>
+                <p>This is a demonstration of how different stylesheets can change the layout of your HTML page. You can
+                    change the layout of this page by selecting different stylesheets in the menu, or by selecting one
+                    of
+                    the following links:</p>
+                <a href="/style1.html">Stylesheet1</a> <!-- Sytlesheet1을 누르면 style1로 이동 -->
+                <a href="">Stylesheet2</a>
+                <a href="/style2.html">Stylesheet3</a> <!-- Sytlesheet3을 누르면 style2로 이동 -->
+                <a href="">Stylesheet4</a>
+                <h1>No Styles</h1>
+                <p>This page uses DIV elements to group different sections of the HTML page. Click here to see how the
+                    page
+                    looks like with no stylesheet:</p>
+                <a href="">No Stylesheet.</a>
+            </div>
+
+            <div id="sideBar">
+                <h2 class="sideBarText">Side-Bar</h2>
+                <p class="sideBarText">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                    euismod tincidunt ut
+                    laoreet dolore magna aliquam erat volutpat.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor
+                in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+                vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis
+                dolore te feugait nulla facilisi.</p>
+        </div>
+
+    </div>
+</body>
+
+</html>

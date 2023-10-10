@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        
+        function validateEdit() {
+            window.location.href = "/edit.html";
+        }
         function validateDelete() {
             if(confirm("도서를 삭제하시겠습니까?")) {
                 alert("도서가 삭제되었습니다.");
@@ -110,9 +112,7 @@
             
         </form>
         <div class="edit">
-            <a href="/edit.html">
-                <button>Edit</button>
-            </a>
+            <button onclick="validateEdit();">Edit</button>
           </div>
         <div class="delete">
         <button onclick="validateDelete();">Delete</button>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function validateForm() {
+            var bookname = document.form1.bookname;
+            var writername = document.form1.writername;
+            var publisher = document.form1.publisher;
+            var quantity = document.form1.quantity;
+            var ISBN = document.form1.ISBN;
+            var categoryRadios = document.getElementsByName('category');
+            var selectedCategory = false;
+            var releaseDateInput = document.querySelector('input[type="date"]');
+            var releaseDateValue = releaseDateInput.value;
+
+            if (releaseDateValue === "") {
+                alert("출판 날짜를 입력하세요");
+                releaseDateInput.focus();
+                return false;
+            }
+
+            for (var i = 0; i < categoryRadios.length; i++) {
+                if (categoryRadios[i].checked) {
+                    selectedCategory = true;
+                    break;
+                }
+            }
+
+            if (!selectedCategory) {
+                alert("분야를 선택하세요");
+                return false;
+            }
+            
+            if (bookname.value == "") {
+                alert("도서명을 입력하세요");
+                bookname.focus();
+                return false;
+            }
+            if (!isNaN(bookname.value)) {
+                alert("도서명은 숫자일 수 없습니다");
+                bookname.focus();
+                return false;
+            }
+            if (writername.value == "") {
+                alert("저자명을 입력하세요");
+                writername.focus();
+                return false;
+            }
+            if (!isNaN(bookname.value)) {
+                alert("저자명은 숫자일 수 없습니다");
+                bookname.focus();
+                return false;
+            }
+            if (publisher.value == "") {
+                alert("출판사명을 입력하세요");
+                publisher.focus();
+                return false;
+            }
+            if (!isNaN(bookname.value)) {
+                alert("출판사명은 숫자일 수 없습니다");
+                bookname.focus();
+                return false;
+            }
+            if (quantity.value == "") {
+                alert("수량을 입력하세요");
+                quantity.focus();
+                return false;
+            }
+            if (isNaN(quantity.value)) {
+                alert("수량은 숫자여야 합니다");
+                quantity.focus();
+                return false;
+            }
+            if (ISBN.value == "") {
+                alert("ISBN을 입력하세요");
+                ISBN.focus();
+                return false;
+            }
+            if (isNaN(ISBN.value)) {
+                alert("ISBN은 숫자여야 합니다");
+                ISBN.focus();
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name = "form1" action="submit.php" onsubmit = "return validateForm()" method="post">
+            <fieldset>
+            <legend>도서관리 시스템</legend>
+            <label for="name">도서명</label> <!-- 아예 입력 없을시 입력하라는 문구와 포커싱-->
+            <input type="text" name="bookname" /><br />
+            <label for="name">저자명</label> <!-- 아예 입력 없을시 입력하라는 문구와 포커싱-->
+            <input type="text" name="writername" /><br />
+            <label for="name">출판사</label> <!-- 아예 입력 없을시 입력하라는 문구와 포커싱-->
+            <input type="text" name="publisher" /><br />
+            <label for="name">수량</label> <!-- 아예 입력 없을시 입력하라는 문구와 포커싱-->
+            <input type="text" name="quantity" /><br />
+
+            <label for="category">분야</label>
+            <input type='radio' name='category' value='소설' />소설
+            <input type='radio' name='category' value='경제/경영' />경제/경영
+            <input type='radio' name='category' value='자기계발' />자기계발
+            <input type='radio' name='category' value='철학' />철학
+            <input type='radio' name='category' value='과학' />과학
+            <input type='radio' name='category' value='여행' />여행
+            <input type='radio' name='category' value='예술/문화' />예술/문화
+            <input type='radio' name='category' value='종교' />종교
+            <input type='radio' name='category' value='만화' />만화
+            <input type='radio' name='category' value='미술' />미술
+            <input type='radio' name='category' value='역사' />역사
+            <input type='radio' name='category' value='그 외' />그 외<br />
+
+            <label for="release">출판 날짜</label>
+            <input type="date" /><br />
+
+            <label for="name">ISBN</label> <!-- 아예 입력 없을시 입력하라는 문구와 포커싱-->
+            <input type="text" name="ISBN" /><br />
+            <!--
+            <label for="major">교체하고싶은 휴대폰 기종</label>
+            <select>
+                <optgroup label="아이폰">
+                    <option value="iphone">아이폰12Pro</option>
+                    <option value="iphone">아이폰13Pro</option>
+                    <option value="iphone">아이폰14Pro</option>
+                </optgroup>
+                <optgroup label="갤럭시">
+                    <option value="galaxy">갤럭시s24</option>
+                    <option value="galaxy">갤럭시Z플립3</option>
+                    <option value="galaxy">갤럭시노트20</option>
+                </optgroup>
+            </select><br />
+
+            <label for="used">베스트셀러 순위</label>
+            <input type="checkbox" name="used" value="1" />1위
+            <input type="checkbox" name="used" value="2" />2위
+            <input type="checkbox" name="used" value="3" />3위
+            <input type="checkbox" name="used" value="4" />갤럭시 노트시리즈
+            <input type="checkbox" name="used" value="5" />그 외<br>
+            -->
+           
+            <label for="introduction">추가하는 이유</label>
+            <textarea name="introduction" cols="50" rows="4"></textarea><br />
+            
+            <label for="color">책 표지 색상</label>
+            <input type="color" name="color" />
+            
+            </fieldset>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+    
+    </form>
+</body>
+</html>

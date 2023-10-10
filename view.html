@@ -8,7 +8,12 @@
     <script>
         
         function validateDelete() {
-            confirm("도서를 삭제하시겠습니까?")
+            if(confirm("도서를 삭제하시겠습니까?")) {
+                alert("도서가 삭제되었습니다.");
+            }
+            else {
+                alert("삭제가 취소되었습니다.");
+            }
         }
         
     </script>

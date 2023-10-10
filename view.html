@@ -8,7 +8,7 @@
     <title>Document</title>
     <script>
         function validateEdit() {
-            window.location.replace('https://leafy-bienenstitch-77e093.netlify.app/edit.html');
+            window.location.href = "edit.html";
         }
 
         function validateDelete() {
@@ -115,7 +115,7 @@
 <body>
 
     <div class="signup-form">
-        <form name="form1">
+        <form name = "form1"  method="post">
 
             <h2>도서관리 시스템 - 보기</h2>
             <p>젊은 베르테르의 슬픔</p>
@@ -142,7 +142,7 @@
 
         </form>
         <div class="edit">
-            <button onclick="validateEdit()">Edit</button>
+            <button onclick="window.location.href = 'edit.html';">Edit</button>
         </div>
         <div class="delete">
             <button onclick="validateDelete()">Delete</button>

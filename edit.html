@@ -18,7 +18,7 @@
             var releaseDateValue = releaseDateInput.value;
 
             if (bookname.value == "") {
-                alert("도서명을 입력하세요");
+                alert("도서명을 수정하세요");
                 bookname.focus();
                 return false;
             }
@@ -28,7 +28,7 @@
                 return false;
             }
             if (writername.value == "") {
-                alert("저자명을 입력하세요");
+                alert("저자명을 수정하세요");
                 writername.focus();
                 return false;
             }
@@ -38,7 +38,7 @@
                 return false;
             }
             if (publisher.value == "") {
-                alert("출판사명을 입력하세요");
+                alert("출판사명을 수정하세요");
                 publisher.focus();
                 return false;
             }
@@ -48,7 +48,7 @@
                 return false;
             }
             if (quantity.value == "") {
-                alert("수량을 입력하세요");
+                alert("수량을 수정하세요");
                 quantity.focus();
                 return false;
             }
@@ -64,16 +64,16 @@
                 }
             }
             if (!selectedCategory) {
-                alert("분야를 선택하세요");
+                alert("분야를 수정하세요");
                 return false;
             }
             if (releaseDateValue === "") {
-                alert("출판 날짜를 입력하세요");
+                alert("출판 날짜를 수정하세요");
                 releaseDateInput.focus();
                 return false;
             }
             if (ISBN.value == "") {
-                alert("ISBN을 입력하세요");
+                alert("ISBN을 수정하세요");
                 ISBN.focus();
                 return false;
             }
@@ -82,18 +82,14 @@
                 ISBN.focus();
                 return false;
             }
-        }
-        function confirmAdd() {
             if (confirm("도서를 수정하시겠습니까?")) {
-                
-                    window.location.href = "index.html";
-                
+                alert("도서가 수정되었습니다.");
             }
             else {
-              return false
+                alert("수정이 취소되었습니다.");
             }
-            
         }
+        
     </script>
     <style>
         body {
@@ -166,7 +162,7 @@
 <body>
     
     <div class="signup-form">
-        <form name = "form1" onsubmit = "return validateForm()" method="post">
+        <form name = "form1"  method="post">
             
             <h2>도서관리 시스템 - 수정</h2>
             
@@ -208,8 +204,8 @@
             <div>
                 <input class="name"type="color" name="color" />
             </div>
-            <div>
-                <input class="edit" type="submit" value="Edit" onclick="confirmAdd();">
+            <div class="form-group">
+                <button onclick="validateForm();">Edit</button>
             </div>
             
         </form>

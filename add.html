@@ -17,24 +17,6 @@
             var releaseDateInput = document.querySelector('input[type="date"]');
             var releaseDateValue = releaseDateInput.value;
 
-            if (releaseDateValue === "") {
-                alert("출판 날짜를 입력하세요");
-                releaseDateInput.focus();
-                return false;
-            }
-
-            for (var i = 0; i < categoryRadios.length; i++) {
-                if (categoryRadios[i].checked) {
-                    selectedCategory = true;
-                    break;
-                }
-            }
-
-            if (!selectedCategory) {
-                alert("분야를 선택하세요");
-                return false;
-            }
-            
             if (bookname.value == "") {
                 alert("도서명을 입력하세요");
                 bookname.focus();
@@ -73,6 +55,21 @@
             if (isNaN(quantity.value)) {
                 alert("수량은 숫자여야 합니다");
                 quantity.focus();
+                return false;
+            }
+            for (var i = 0; i < categoryRadios.length; i++) {
+                if (categoryRadios[i].checked) {
+                    selectedCategory = true;
+                    break;
+                }
+            }
+            if (!selectedCategory) {
+                alert("분야를 선택하세요");
+                return false;
+            }
+            if (releaseDateValue === "") {
+                alert("출판 날짜를 입력하세요");
+                releaseDateInput.focus();
                 return false;
             }
             if (ISBN.value == "") {
@@ -150,8 +147,8 @@
             <input type="color" name="color" />
             
             </fieldset>
-            <input type="submit" value="Submit">
-            <input type="reset" value="Reset">
+            <input type="submit" value="추가">
+            <input type="reset" value="초기화">
     
     </form>
 </body>

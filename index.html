@@ -3,14 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>도서관리 시스템</title>
+    <style>
+        /* 도서 목록 컨테이너 스타일 */
+        .book-list {
+            margin-top: 20px;
+        }
+
+        
+        /* 도서 제목 스타일 */
+        .book-title {
+            font-size: 18px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px auto; /* 가운데 정렬을 위해 margin을 추가합니다. */
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e48787;
+        }
+
+        /* Add 버튼 스타일 */
+        .add-button {
+            background-color: #3ed145;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .add-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Add</h1>
-    <a href="/add.html">Add</a>
-    <h1>view</h1>
-    <a href="/submit.php">view</a>
-    <h1>form</h1>
-    <a href="/form.html">form</a>
+    <form name="form1" action="submit.php" onsubmit="return validateForm()" method="post">
+        <!-- 폼 요소들 -->
+        <h1>
+            도서관리 시스템
+        </h1>
+        <a href="/add.html" class="add-button">Add</a>
+    </form>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>분야</th>
+                    <th>도서명</th>
+                    <th>저자명</th>
+                    <th>수량</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>소설</td>
+                    <td>젊은 베르테르의 슬픔</td>
+                    <td>괴테</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Book 2</td>
+                    <td>Category 2</td>
+                    <td>Author 2</td>
+                    <td>2</td>
+                </tr>
+                <!-- Add other book items as additional rows -->
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

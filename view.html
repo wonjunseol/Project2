@@ -10,9 +10,12 @@
             event.preventDefault(); // 기본 이벤트 동작 중지
 
             if (confirm("도서의 정보를 수정하시겠습니까?")) {
-                // 확인을 누르면 index.html로 이동
+                // 확인을 누를 때만 alert 창 띄우기
+                alert("수정이 완료되었습니다.");
+                // 페이지를 edit.html로 이동
                 window.location.href = "edit.html";
             } else {
+                // "취소"를 눌렀을 경우 아무 동작 없음
                 return false;
             }
         }

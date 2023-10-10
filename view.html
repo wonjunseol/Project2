@@ -109,6 +109,20 @@
             margin-left: 30px;
             /* 다른 스타일 속성들을 추가할 수 있습니다. */
         }
+        .button-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #a23e3e;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-link:hover {
+  background-color: #a23e3e;
+}
     </style>
 </head>
 
@@ -142,7 +156,7 @@
 
         </form>
         <div class="edit">
-            <button onclick="window.location.href = 'edit.html';">Edit</button>
+            <a href="edit.html" class="button-link">Edit</a>
         </div>
         <div class="delete">
             <button onclick="validateDelete()">Delete</button>

@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <script>
         function validateForm() {
             var bookname = document.form1.bookname;
@@ -17,24 +17,6 @@
             var releaseDateInput = document.querySelector('input[type="date"]');
             var releaseDateValue = releaseDateInput.value;
 
-            if (releaseDateValue === "") {
-                alert("출판 날짜를 입력하세요");
-                releaseDateInput.focus();
-                return false;
-            }
-
-            for (var i = 0; i < categoryRadios.length; i++) {
-                if (categoryRadios[i].checked) {
-                    selectedCategory = true;
-                    break;
-                }
-            }
-
-            if (!selectedCategory) {
-                alert("분야를 선택하세요");
-                return false;
-            }
-            
             if (bookname.value == "") {
                 alert("도서명을 입력하세요");
                 bookname.focus();
@@ -75,6 +57,21 @@
                 quantity.focus();
                 return false;
             }
+            for (var i = 0; i < categoryRadios.length; i++) {
+                if (categoryRadios[i].checked) {
+                    selectedCategory = true;
+                    break;
+                }
+            }
+            if (!selectedCategory) {
+                alert("분야를 선택하세요");
+                return false;
+            }
+            if (releaseDateValue === "") {
+                alert("출판 날짜를 입력하세요");
+                releaseDateInput.focus();
+                return false;
+            }
             if (ISBN.value == "") {
                 alert("ISBN을 입력하세요");
                 ISBN.focus();
@@ -86,73 +83,138 @@
                 return false;
             }
         }
+        function confirmAdd() {
+            if (confirm("도서를 추가하시겠습니까?")) {
+                
+                    window.location.href = "index.html";
+                
+            }
+            else {
+              return false
+            }
+            
+        }
     </script>
+    <style>
+        body {
+        color: #fff;
+        background: #e48787;
+        font-family: 'Roboto', sans-serif;
+        }
+    body {
+            color: rgb(243, 159, 159);
+            background: #e48787;
+            font-family: 'Roboto', sans-serif;
+            display: flex; /* 부모 요소를 flex 컨테이너로 설정 */
+            justify-content: center; /* 가로 중앙 정렬 */
+            align-items: center; /* 세로 중앙 정렬 */
+            height: 100vh; /* 화면 전체 높이로 설정 */
+            margin: 0;
+        }
+
+        .signup-form {
+            width: 800px; /* 원하는 너비로 설정 */
+            height: 700px;
+            padding: 20px; /* 내부 여백 추가 */
+            margin: 0 auto; /* 수평 가운데 정렬 */
+            background-color: #fff;
+            border-radius: 8px; /* 모서리를 둥글게 만듦 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+        }
+        .title {
+            display: flex; /* 부모 요소를 flex 컨테이너로 설정 */
+            justify-content: center; /* 가로 중앙 정렬 */
+            align-items: center; /* 세로 중앙 정렬 */
+            margin-bottom: 10px; /* 요소 간 간격을 조절할 수 있습니다. */
+            font-weight: bolder;
+        }
+        .name {
+            
+            display: block; /* 요소를 블록 수준 요소로 변경하여 가로로 전체 너비를 차지하도록 함 */
+            margin: 0 auto; /* 왼쪽과 오른쪽 여백을 자동으로 설정하여 수평 가운데 정렬 */
+        }
+        .radio-container {
+            display: flex;
+            flex-direction: row; /* 요소들을 가로 방향으로 배치 */
+            justify-content: center; /* 가로 중앙 정렬 */
+            align-items: center; /* 요소를 수직 가운데 정렬 */
+            margin-bottom: 10px; /* 요소 간 간격을 조절할 수 있습니다. */
+        }
+        
+        .form-group {
+            display: flex; /* 부모 요소를 flex 컨테이너로 설정 */
+            justify-content: center; /* 가로 중앙 정렬 */
+            align-items: center; /* 세로 중앙 정렬 */
+        }
+
+        .edit {
+            background-color: #ed6565; /* 원하는 배경색을 지정하세요 */
+            display: block; /* 요소를 블록 수준 요소로 변경하여 가로로 전체 너비를 차지하도록 함 */
+            margin: 0 auto; /* 왼쪽과 오른쪽 여백을 자동으로 설정하여 수평 가운데 정렬 */
+            border: none;
+        }
+        .delete {
+            background-color: #a23e3e; /* 원하는 배경색을 지정하세요 */
+            color: #fff; /* 텍스트 색상 설정 */
+            border: none;
+            margin-left: 30px;
+            /* 다른 스타일 속성들을 추가할 수 있습니다. */
+        }
+    </style>
 </head>
+
 <body>
-    <form name = "form1" action="submit.php" onsubmit = "return validateForm()" method="post">
-            <fieldset>
-            <legend>도서관리 시스템</legend>
-            <label for="name">도서명</label> <!-- 아예 입력 없을시 입력하라는 문구와 포커싱-->
-            <input type="text" name="bookname" /><br />
-            <label for="name">저자명</label> <!-- 아예 입력 없을시 입력하라는 문구와 포커싱-->
-            <input type="text" name="writername" /><br />
-            <label for="name">출판사</label> <!-- 아예 입력 없을시 입력하라는 문구와 포커싱-->
-            <input type="text" name="publisher" /><br />
-            <label for="name">수량</label> <!-- 아예 입력 없을시 입력하라는 문구와 포커싱-->
-            <input type="text" name="quantity" /><br />
-
-            <label for="category">분야</label>
-            <input type='radio' name='category' value='소설' />소설
-            <input type='radio' name='category' value='경제/경영' />경제/경영
-            <input type='radio' name='category' value='자기계발' />자기계발
-            <input type='radio' name='category' value='철학' />철학
-            <input type='radio' name='category' value='과학' />과학
-            <input type='radio' name='category' value='여행' />여행
-            <input type='radio' name='category' value='예술/문화' />예술/문화
-            <input type='radio' name='category' value='종교' />종교
-            <input type='radio' name='category' value='만화' />만화
-            <input type='radio' name='category' value='미술' />미술
-            <input type='radio' name='category' value='역사' />역사
-            <input type='radio' name='category' value='그 외' />그 외<br />
-
-            <label for="release">출판 날짜</label>
-            <input type="date" /><br />
-
-            <label for="name">ISBN</label> <!-- 아예 입력 없을시 입력하라는 문구와 포커싱-->
-            <input type="text" name="ISBN" /><br />
-            <!--
-            <label for="major">교체하고싶은 휴대폰 기종</label>
-            <select>
-                <optgroup label="아이폰">
-                    <option value="iphone">아이폰12Pro</option>
-                    <option value="iphone">아이폰13Pro</option>
-                    <option value="iphone">아이폰14Pro</option>
-                </optgroup>
-                <optgroup label="갤럭시">
-                    <option value="galaxy">갤럭시s24</option>
-                    <option value="galaxy">갤럭시Z플립3</option>
-                    <option value="galaxy">갤럭시노트20</option>
-                </optgroup>
-            </select><br />
-
-            <label for="used">베스트셀러 순위</label>
-            <input type="checkbox" name="used" value="1" />1위
-            <input type="checkbox" name="used" value="2" />2위
-            <input type="checkbox" name="used" value="3" />3위
-            <input type="checkbox" name="used" value="4" />갤럭시 노트시리즈
-            <input type="checkbox" name="used" value="5" />그 외<br>
-            -->
-           
-            <label for="introduction">추가하는 이유</label>
-            <textarea name="introduction" cols="50" rows="4"></textarea><br />
-            
-            <label for="color">책 표지 색상</label>
-            <input type="color" name="color" />
-            
-            </fieldset>
-            <input type="submit" value="Submit">
-            <input type="reset" value="Reset">
     
-    </form>
-</body>
+    <div class="signup-form">
+        <form name = "form1" onsubmit = "return validateForm()" method="post">
+            
+            <h2>도서관리 시스템 - 수정</h2>
+            
+            <hr>
+            <div class="title">도서명:</div>   	
+            <input class="name" type="text" name="bookname" placeholder="젊은 베르테르의 슬픔"/><br /> 
+            <div class="title">저자명:</div>
+            <input class="name" type="text" name="writername" placeholder="괴테"/><br />   	
+            <div class="title">출판사:</div> 
+            <input class="name" type="text" name="publisher" placeholder="민음사"/><br /> 
+            <div class="title">수량:</div>
+            <input class="name" type="text" name="quantity" placeholder="3"/><br /> 
+            <div class="title">분야:</div>
+            <div class="radio-container">
+                <label>
+                <input type='radio' name='category' value='소설' checked/>소설
+                <input type='radio' name='category' value='경제/경영' />경제/경영
+                <input type='radio' name='category' value='자기계발' />자기계발
+                <input type='radio' name='category' value='철학' />철학
+                <input type='radio' name='category' value='과학' />과학
+                <input type='radio' name='category' value='여행' />여행
+                <input type='radio' name='category' value='예술/문화' />예술/문화
+                <input type='radio' name='category' value='종교' />종교
+                <input type='radio' name='category' value='만화' />만화
+                <input type='radio' name='category' value='미술' />미술
+                <input type='radio' name='category' value='역사' />역사
+                <input type='radio' name='category' value='그 외' />그 외<br />
+                </label>
+            </div>
+            <div class="title">출판날짜:</div>
+            <div class="radio-container">
+                <input type="date" value="1999-03-20"><br />
+            </div>
+            <div class="title">ISBN:</div>
+            <input class="name" type="text" name="ISBN" placeholder="83723129312"/><br />
+            <div class="title">추가하는 이유:</div>
+            <textarea class="name" name="introduction" cols="50" rows="1" placeholder="괴테의 작품들을 좋아하여서"></textarea><br />
+            <div class="title">책 표지 색상:</div>
+            <div>
+                <input class="name"type="color" name="color" />
+            </div>
+            <div>
+                <input class="edit" type="submit" value="Edit" onclick="confirmAdd();">
+            </div>
+            
+        </form>
+        
+    </div>
+    
+    </body>
 </html>

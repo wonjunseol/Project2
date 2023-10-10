@@ -147,10 +147,11 @@
         }
 
         .edit {
-            background-color: #ed6565; /* 원하는 배경색을 지정하세요 */
-            display: block; /* 요소를 블록 수준 요소로 변경하여 가로로 전체 너비를 차지하도록 함 */
-            margin: 0 auto; /* 왼쪽과 오른쪽 여백을 자동으로 설정하여 수평 가운데 정렬 */
+            background-color: #ff0000; /* 원하는 배경색을 지정하세요 */
+            color: #fff; /* 텍스트 색상 설정 */
             border: none;
+            margin-right: 30px;
+            /* 다른 스타일 속성들을 추가할 수 있습니다. */
         }
         .delete {
             background-color: #a23e3e; /* 원하는 배경색을 지정하세요 */
@@ -167,7 +168,7 @@
     <div class="signup-form">
         <form name = "form1" onsubmit = "return validateForm()" method="post">
             
-            <h2>도서관리 시스템 - 추가</h2>
+            <h2>도서관리 시스템</h2>
             
             <hr>
             <div class="title">도서명:</div>   	
@@ -208,7 +209,7 @@
                 <input class="name"type="color" name="color" />
             </div>
             <div>
-                <input class="edit" type="submit" value="제출" onclick="confirmAdd();">
+                <input class="name" type="submit" value="제출" onclick="confirmAdd();">
             </div>
             
         </form>

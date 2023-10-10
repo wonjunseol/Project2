@@ -6,29 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function confirmEdit(event) {
-            event.preventDefault(); // 기본 이벤트 동작 중지
-
-            if (confirm("도서의 정보를 수정하시겠습니까?")) {
-                // 확인을 누를 때만 alert 창 띄우기
-                alert("수정이 완료되었습니다.");
-                // 페이지를 edit.html로 이동
-                window.location.href = "edit.html";
-            } else {
-                // "취소"를 눌렀을 경우 아무 동작 없음
-                return false;
-            }
+        
+        function validateDelete() {
+            confirm("도서를 삭제하시겠습니까?")
         }
-        function confirmDelete() {
-            if (confirm("도서의 정보를 삭제하시겠습니까?")) {
-                // 확인을 누르면 index.html로 이동
-                
-            }
-            else {
-              return false
-            }
-            
-        }
+        
     </script>
     <style>
         body {
@@ -96,7 +78,7 @@
 <body>
     
     <div class="signup-form">
-        <form action="/examples/actions/confirmation.php" method="post">
+        <form name = "form1" method="post">
             
             <h2>도서관리 시스템 - 보기</h2>
             <p>젊은 베르테르의 슬픔</p>
@@ -120,11 +102,16 @@
             <div class="title">책 표지 색상:</div>
             <div class="name">흰색</div>           
             <div class="form-group">        	
-            <input class="edit" type="submit" value="Edit" onclick="confirmEdit();">
-            <input class="delete" type="submit" value="Delete" onclick="confirmDelete();">
             
         </form>
-        
+        <div class="edit">
+            <a href="/edit.html">
+                <button>Edit</button>
+            </a>
+          </div>
+        <div class="delete">
+        <button onclick="validateDelete();">Delete</button>
+        </div>
     </div>
     
     </body>

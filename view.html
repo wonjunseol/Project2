@@ -5,6 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        function confirmEdit() {
+            if (confirm("도서의 정보를 수정하시겠습니까?")) {
+                // 확인을 누르면 index.html로 이동
+                window.location.href = "edit.html";
+            }
+            else {
+              return false
+            }
+            
+        }
+        function confirmDelete() {
+            if (confirm("도서의 정보를 삭제하시겠습니까?")) {
+                // 확인을 누르면 index.html로 이동
+                
+            }
+            else {
+              return false
+            }
+            
+        }
+    </script>
     <style>
         body {
         color: #fff;
@@ -95,8 +117,8 @@
             <div class="title">책 표지 색상:</div>
             <div class="name">흰색</div>           
             <div class="form-group">        	
-            <input class="edit" type="submit" value="Edit">
-            <input class="delete" type="submit" value="Delete">
+            <input class="edit" type="submit" value="Edit" onclick="confirmEdit();">
+            <input class="delete" type="submit" value="Delete" onclick="confirmDelete();">
             
         </form>
         

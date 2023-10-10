@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,74 +8,103 @@
     <title>Document</title>
     <script>
         function validateEdit() {
-            window.location.href = "edit.html";
+            window.location.replace('edit.html');
         }
+
         function validateDelete() {
-            if(confirm("도서를 삭제하시겠습니까?")) {
+            if (confirm("도서를 삭제하시겠습니까?")) {
                 alert("도서가 삭제되었습니다.");
             }
             else {
                 alert("삭제가 취소되었습니다.");
             }
         }
-        
+
     </script>
     <style>
         body {
-        color: #fff;
-        background: #e48787;
-        font-family: 'Roboto', sans-serif;
+            color: #fff;
+            background: #e48787;
+            font-family: 'Roboto', sans-serif;
         }
-    body {
+
+        body {
             color: rgb(243, 159, 159);
             background: #e48787;
             font-family: 'Roboto', sans-serif;
-            display: flex; /* 부모 요소를 flex 컨테이너로 설정 */
-            justify-content: center; /* 가로 중앙 정렬 */
-            align-items: center; /* 세로 중앙 정렬 */
-            height: 100vh; /* 화면 전체 높이로 설정 */
+            display: flex;
+            /* 부모 요소를 flex 컨테이너로 설정 */
+            justify-content: center;
+            /* 가로 중앙 정렬 */
+            align-items: center;
+            /* 세로 중앙 정렬 */
+            height: 100vh;
+            /* 화면 전체 높이로 설정 */
             margin: 0;
         }
 
         .signup-form {
-            width: 400px; /* 원하는 너비로 설정 */
+            width: 400px;
+            /* 원하는 너비로 설정 */
             height: 650px;
-            padding: 20px; /* 내부 여백 추가 */
-            margin: 0 auto; /* 수평 가운데 정렬 */
+            padding: 20px;
+            /* 내부 여백 추가 */
+            margin: 0 auto;
+            /* 수평 가운데 정렬 */
             background-color: #fff;
-            border-radius: 8px; /* 모서리를 둥글게 만듦 */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+            border-radius: 8px;
+            /* 모서리를 둥글게 만듦 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            /* 그림자 효과 추가 */
         }
+
         .title {
-            display: flex; /* 부모 요소를 flex 컨테이너로 설정 */
-            justify-content: center; /* 가로 중앙 정렬 */
-            align-items: center; /* 세로 중앙 정렬 */
-            margin-bottom: 10px; /* 요소 간 간격을 조절할 수 있습니다. */
+            display: flex;
+            /* 부모 요소를 flex 컨테이너로 설정 */
+            justify-content: center;
+            /* 가로 중앙 정렬 */
+            align-items: center;
+            /* 세로 중앙 정렬 */
+            margin-bottom: 10px;
+            /* 요소 간 간격을 조절할 수 있습니다. */
             font-weight: bolder;
         }
+
         .name {
-            display: flex; /* 부모 요소를 flex 컨테이너로 설정 */
-            justify-content: center; /* 가로 중앙 정렬 */
-            align-items: center; /* 세로 중앙 정렬 */
-            margin-bottom: 10px; /* 요소 간 간격을 조절할 수 있습니다. */
+            display: flex;
+            /* 부모 요소를 flex 컨테이너로 설정 */
+            justify-content: center;
+            /* 가로 중앙 정렬 */
+            align-items: center;
+            /* 세로 중앙 정렬 */
+            margin-bottom: 10px;
+            /* 요소 간 간격을 조절할 수 있습니다. */
         }
-        
+
         .form-group {
-            display: flex; /* 부모 요소를 flex 컨테이너로 설정 */
-            justify-content: center; /* 가로 중앙 정렬 */
-            align-items: center; /* 세로 중앙 정렬 */
+            display: flex;
+            /* 부모 요소를 flex 컨테이너로 설정 */
+            justify-content: center;
+            /* 가로 중앙 정렬 */
+            align-items: center;
+            /* 세로 중앙 정렬 */
         }
 
         .edit {
-            background-color: #ff0000; /* 원하는 배경색을 지정하세요 */
-            color: #fff; /* 텍스트 색상 설정 */
+            background-color: #ff0000;
+            /* 원하는 배경색을 지정하세요 */
+            color: #fff;
+            /* 텍스트 색상 설정 */
             border: none;
             margin-right: 30px;
             /* 다른 스타일 속성들을 추가할 수 있습니다. */
         }
+
         .delete {
-            background-color: #a23e3e; /* 원하는 배경색을 지정하세요 */
-            color: #fff; /* 텍스트 색상 설정 */
+            background-color: #a23e3e;
+            /* 원하는 배경색을 지정하세요 */
+            color: #fff;
+            /* 텍스트 색상 설정 */
             border: none;
             margin-left: 30px;
             /* 다른 스타일 속성들을 추가할 수 있습니다. */
@@ -83,43 +113,42 @@
 </head>
 
 <body>
-    
+
     <div class="signup-form">
-        <form name = "form1" method="post">
-            
+        <form name="form1">
+
             <h2>도서관리 시스템 - 보기</h2>
             <p>젊은 베르테르의 슬픔</p>
             <hr>
-            <div class="title">도서명:</div>   	
-            <div class="name">젊은 베르테르의 슬픔</div>  
+            <div class="title">도서명:</div>
+            <div class="name">젊은 베르테르의 슬픔</div>
             <div class="title">저자명:</div>
-            <div class="name">괴테</div>    	
-            <div class="title">출판사:</div> 
-            <div class="name">민음사</div> 
+            <div class="name">괴테</div>
+            <div class="title">출판사:</div>
+            <div class="name">민음사</div>
             <div class="title">수량:</div>
-            <div class="name">3</div>  
+            <div class="name">3</div>
             <div class="title">분야:</div>
             <div class="name">소설</div>
             <div class="title">출판날짜:</div>
-            <div class="name">1999년 3월 20일</div>  
+            <div class="name">1999년 3월 20일</div>
             <div class="title">ISBN:</div>
             <div class="name">83723129312</div>
             <div class="title">추가하는 이유:</div>
-            <div class="name">괴테의 작품들을 좋아하여서</div>    
+            <div class="name">괴테의 작품들을 좋아하여서</div>
             <div class="title">책 표지 색상:</div>
-            <div class="name">흰색</div>           
-            <div class="form-group">        	
-                <div class="edit">
-                    <a href="/edit.html">
-                        <button>Edit</button>
-                      </a>
-                  </div>
+            <div class="name">흰색</div>
+            <div class="form-group">
+
         </form>
-        
+        <div class="edit">
+            <button onclick="validateEdit()">Edit</button>
+        </div>
         <div class="delete">
-        <button onclick="validateDelete();">Delete</button>
+            <button onclick="validateDelete()">Delete</button>
         </div>
     </div>
-    
-    </body>
+
+</body>
+
 </html>

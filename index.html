@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>도서관리 시스템</title>
     <style>
+        
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
         /* 도서 목록 컨테이너 스타일 */
         .book-list {
             margin-top: 20px;
@@ -57,11 +73,15 @@
         <a href="/add.html" class="add-button">책 추가하기</a>
     </form>
     <h2>추가된 책 리스트</h2>
-    
+    <div class="search-box">
+        <i class="material-icons"></i>
+        <input type="text" class="form-control" placeholder="Search…">
+    </div>
     <div class="container">
         <table>
             <thead>
                 <tr>
+                    <th>번호</th>
                     <th>분야</th>
                     <th>도서명</th>
                     <th>저자명</th>
@@ -70,50 +90,60 @@
             </thead>
             <tbody>
                 <tr>
+                    <td>1</td>
                     <td>소설</td>
-                    <td>젊은 베르테르의 슬픔</td>
+                    <td><a href="/view.html">젊은 베르테르의 슬픔</a></td>
                     <td>괴테</td>
                     <td>3</td>
                 </tr>
                 <tr>
+                    <td>2</td>
                     <td>경제/경영</td>
-                    <td>트렌드 코리아 2024</td>
+                    <td><a href="/view.html">트렌드 코리아 2024</a></td>
                     <td>김난도, 전미영 외 9명</td>
                     <td>2</td>
                 </tr>
                 <tr>
+                    <td>3</td>
                     <td>과학</td>
-                    <td>이기적 유전자</td>
+                    <td><a href="/view.html">이기적 유전자</a></td>
                     <td>리처드 도킨스</td>
                     <td>1</td>
                 </tr>
                 <tr>
+                    <td>4</td>
                     <td>소설</td>
-                    <td>돈키호테</td>
+                    <td><a href="/view.html">돈키호테</a></td>
                     <td>미델 게 세르반테스</td>
                     <td>4</td>
                 </tr>
                 <tr>
+                    <td>5</td>
                     <td>종교</td>
-                    <td>기독교 강요</td>
+                    <td><a href="/view.html">기독교 강요</a></td>
                     <td>존 칼빈</td>
                     <td>2</td>
                 </tr>
                 <tr>
+                    <td>6</td>
                     <td>역사</td>
-                    <td>최소한의 한국사</td>
+                    <td><a href="/view.html">최소한의 한국사</a></td>
                     <td>최태성</td>
                     <td>3</td>
                 </tr>
                 <tr>
+                    <td>7</td>
                     <td>소설</td>
-                    <td>파우스트</td>
+                    <td><a href="/view.html">파우스트</a></td>
                     <td>괴테</td>
                     <td>2</td>
                 </tr>
                 <!-- Add other book items as additional rows -->
             </tbody>
         </table>
+        <div id="pagination">
+            <button id="loadMore">추가된 책 더 보기</button>
+        </div>
     </div>
 </body>
 </html>

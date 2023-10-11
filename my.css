@@ -11,7 +11,16 @@
     /* 다른 요소의 스타일 조절 */
     
 }
-
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        font-size: 16px; /* 테블릿 크기에서 텍스트 크기 조절 */
+        color: rgb(99, 79, 212); /* 테블릿 화면에서 텍스트 색상을 녹색으로 변경 */
+    }
+    .signup-form {
+        width: 70%; /* 테블릿 화면에서 너비 조절 */
+    }
+    /* 다른 요소의 스타일 조절 */
+}
 /* 데스크톱 화면에 대한 스타일 */
 @media (min-width: 1025px) {
     body {

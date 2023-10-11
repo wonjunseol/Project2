@@ -1,0 +1,25 @@
+/* 스마트폰 또는 작은 화면에 대한 스타일 */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px; /* 텍스트 크기 축소 */
+        
+    }
+    .signup-form {
+        width: 90%; /* 너비 조절 */
+        background-color: aqua;
+    }
+    /* 다른 요소의 스타일 조절 */
+}
+
+/* 데스크톱 화면에 대한 스타일 */
+@media (min-width: 1025px) {
+    body {
+        font-size: 18px; /* 데스크톱 크기에 맞게 텍스트 크기 조절 */
+        
+    }
+    .signup-form {
+        width: 800px; /* 원래 크기로 복원 */
+        background-color: initial;
+    }
+    /* 다른 요소의 스타일 조절 */
+}

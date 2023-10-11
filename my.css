@@ -1,7 +1,7 @@
 /* 스마트폰 또는 작은 화면에 대한 스타일 */
 @media (max-width: 600px) {
     body {
-        font-size: 14px; /* 텍스트 크기 축소 */
+        font-size: 6px; /* 텍스트 크기 축소 */
         color: rgb(137, 232, 122);
     }
     .signup-form {
@@ -13,7 +13,7 @@
 }
 @media (min-width: 601px) and (max-width: 1024px) {
     body {
-        font-size: 16px; /* 테블릿 크기에서 텍스트 크기 조절 */
+        font-size: 12px; /* 테블릿 크기에서 텍스트 크기 조절 */
         color: rgb(99, 79, 212); /* 테블릿 화면에서 텍스트 색상을 녹색으로 변경 */
     }
     .signup-form {

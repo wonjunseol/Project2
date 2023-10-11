@@ -2,7 +2,7 @@
 @media (max-width: 600px) {
     body {
         font-size: 14px; /* 텍스트 크기 축소 */
-        
+        background-color: aqua;
     }
     .signup-form {
         width: 90%; /* 너비 조절 */
@@ -15,7 +15,7 @@
 @media (min-width: 1025px) {
     body {
         font-size: 18px; /* 데스크톱 크기에 맞게 텍스트 크기 조절 */
-        
+        background-color: initial;
     }
     .signup-form {
         width: 800px; /* 원래 크기로 복원 */
